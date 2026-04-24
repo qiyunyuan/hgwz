@@ -1,0 +1,29 @@
+{
+  "basic": {
+    "name": "",
+    "gender": "",
+    "birthday": "",
+    "blood_status": "",
+    "social_class": ""
+  },
+  "appearance": {
+    "hair": "",
+    "eyes": "",
+    "build": "",
+    "style": "",
+    "distinctive_features": ""
+  },
+  "background": {
+    "family": "",
+    "environment": "",
+    "core_event": "",
+    "expectation": ""
+  },
+  "personality_matrix": {
+    "motivation": 50,
+    "philosophy": 50,
+    "thinking": 50,
+    "rules": 50
+  },
+  "ai_summary": ""
+}

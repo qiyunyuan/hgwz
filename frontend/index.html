@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="application-name" content="霍格沃兹">
+    <title>霍格沃兹</title>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#fcebf3">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/system-ui.css">    
+    <link rel="stylesheet" href="css/desktop.css">
+
+    <!-- 图标库 -->
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- 手机外壳容器 -->
+    <div id="phone-container">
+        <!-- 桌面主屏幕 -->
+        <div id="desktop">
+            
+            <!-- 游戏标题区 -->
+    <div class="game-header">
+        <h1 class="game-title">霍格沃兹</h1>
+        <div class="title-decoration"></div>
+        <p class="game-tagline">AI 沉浸式文学冒险</p>
+    </div>
+
+            <!-- 角色选择卡 -->
+            <div class="character-selector" id="character-selector">
+                <div class="selector-label">
+                    <span class="label-icon">🧙</span>
+                    <span>当前角色</span>
+                </div>
+                <div class="character-card-mini" id="character-card-mini">
+                    <div class="mini-avatar">✨</div>
+                    <div class="mini-info">
+                        <div class="mini-name" id="current-char-name">未选择角色</div>
+                        <div class="mini-hint">点击选择角色</div>
+                    </div>
+                    <div class="mini-arrow">▼</div>
+                </div>
+            </div>
+
+            <!-- 主菜单按钮区 -->
+    <div class="main-menu">
+        <div class="menu-item" data-app="game_scene">
+            <button class="parchment-btn">
+                <span class="btn-text">进入游戏</span>
+            </button>
+        </div>
+        
+        <div class="menu-item" data-app="system_setting">
+            <button class="parchment-btn">
+                <span class="btn-text">API 设置</span>
+            </button>
+        </div>
+        <div class="menu-item" data-app="character_profile">
+            <button class="parchment-btn">
+                <span class="btn-text">角色档案</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 底部装饰 -->
+    <div class="desktop-footer">
+        <p>© 1991 Hogwarts School of Witchcraft and Wizardry</p>
+    </div>
+
+        </div>
+
+                <!-- APP 容器（默认隐藏） -->
+        <div id="app-container" class="hidden"></div>
+    </div>
+
+    <!-- 角色选择弹窗 -->
+    <div id="character-select-modal" class="modal-overlay">
+        <div class="modal-content character-select-modal">
+            <div class="modal-header">
+                <h3>选择角色</h3>
+                <button class="close-btn" id="close-select-modal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="character-select-list" id="character-select-list">
+                    <!-- 角色列表会动态生成在这里 -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cute-btn-small" id="btn-cancel-select">取消</button>
+            </div>
+        </div>
+    </div>
+    
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>

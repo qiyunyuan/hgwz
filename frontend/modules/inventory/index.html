@@ -1,0 +1,24 @@
+<body>
+<div class="inventory-overlay v01-stage" id="inventory-overlay">
+    <div class="inventory-modal">
+        <div class="inventory-header">
+            <h3><i class="lni lni-package"></i> 随身物品</h3>
+            <button class="close-modal-btn" id="close-inventory">&times;</button>
+        </div>
+        
+        <div class="inventory-body">
+            <!-- v0.1 仅显示 3 个大格子 -->
+            <div class="inventory-grid-v01" id="inventory-grid">
+                <!-- 动态渲染 3 个物品 -->
+            </div>
+
+            <!-- 简易详情区 -->
+            <div class="item-detail-panel" id="item-detail" style="display: none;">
+                <h4 id="detail-name">物品名称</h4>
+                <p id="detail-desc">描述...</p>
+                <button class="use-btn" id="btn-use-item">查看详情</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

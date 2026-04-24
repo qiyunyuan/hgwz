@@ -1,0 +1,148 @@
+.scene-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #f4e4bc; /* 羊皮纸底色 */
+}
+
+.scene-back-btn, .scene-menu-btn {
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scene-status {
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.scene-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2c241b;
+}
+
+.scene-content p {
+    margin-bottom: 15px;
+    text-indent: 2em;
+}
+
+.scene-actions {
+    width: 100%;           /* 🌟 强制占满横向空间 */
+    box-sizing: border-box;
+    padding: 15px 20px;
+    background: rgba(234, 221, 197, 0.9);
+    border-top: 1px solid #d4c0a0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.action-btn {
+    background-color: #8e735b;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.action-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}
+
+/* 通用模态框遮罩层 (建议移到 global_theme.css) */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-overlay.active {
+    display: flex;
+}
+
+/* ... 保留原有样式 ... */
+
+/* 底部系统操作栏容器 */
+.system-footer {
+    height: 65px;
+    background-color: #4a3b3b; /* 与顶部色调一致 */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #5d4a4a;
+    flex-shrink: 0;
+    padding-bottom: env(safe-area-inset-bottom); /* 适配全面屏底部 */
+}
+
+/* 底部按钮样式 */
+.footer-btn {
+    background: none;
+    border: none;
+    color: #f5e6d3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    flex: 1;
+    transition: all 0.2s;
+    opacity: 0.8;
+}
+
+.footer-btn i {
+    font-size: 1.3rem;
+}
+
+.footer-btn span {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.footer-btn:active {
+    opacity: 1;
+    transform: scale(0.95);
+    color: #fff;
+}
+
+/* 调整行动按键区样式，使其更像悬浮或半透明覆盖 */
+.scene-actions {
+    padding: 12px 20px;
+    background: rgba(244, 228, 188, 0.95); /* 羊皮纸色半透明 */
+    border-top: 1px solid #d4c0a0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* 调整剧情区域，确保它能被正确撑开 */
+.scene-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    /* 增加平滑滚动 */
+    scroll-behavior: smooth; 
+}

@@ -1,0 +1,122 @@
+<body>
+<!-- 角色档案主界面 -->
+<div id="character-main-view" class="app-view active">
+    
+    <!-- 1. 标题栏：返回键、标题名、新建键 -->
+    <div class="sys-app-header">
+        <div class="sys-header-btn" id="btn-back-main">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </div>
+        <div class="sys-header-title">角色档案</div>
+        <div class="sys-header-btn" id="btn-new-character">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+        </div>
+    </div>
+
+    <!-- 2. 内容区域：角色列表 -->
+    <div class="sys-app-content">
+        <div class="character-list" id="character-list">
+            <!-- 角色卡片会动态生成在这里 -->
+            <div class="empty-state">暂无角色，点击右上角 + 创建</div>
+        </div>
+    </div>
+</div>
+
+<!-- ================== 新建/编辑角色界面 ================== -->
+<div id="character-edit-view" class="app-view">
+    
+    <!-- 标题栏：返回键、标题名、保存键 -->
+    <div class="sys-app-header">
+        <div class="sys-header-btn" id="btn-edit-back">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </div>
+        <div class="sys-header-title" id="edit-view-title">新建角色</div>
+        <div class="sys-header-btn" id="btn-save-character">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+    </div>
+
+    <!-- 内容区域：表单 -->
+    <div class="sys-app-content sys-content-padding edit-form-scroll">
+        
+        <!-- 基础设定表单 -->
+        <div class="edit-form-group">
+            <label>名字 <span class="required">*</span></label>
+            <input type="text" id="char-name" class="cute-input" placeholder="请输入角色姓名">
+        </div>
+
+        <div class="edit-form-row">
+            <div class="edit-form-group half">
+                <label>性别</label>
+                <select id="char-gender" class="cute-input">
+                    <option value="">未选择</option>
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+            <div class="edit-form-group half">
+                <label>生日</label>
+                <input type="date" id="char-birthday" class="cute-input" placeholder="YYYY-MM-DD">
+            </div>
+        </div>
+
+        <div class="edit-form-group">
+            <label>血统</label>
+            <select id="char-bloodline" class="cute-input">
+                <option value="">未选择</option>
+                <option value="纯血">纯血</option>
+                <option value="混血">混血</option>
+                <option value="麻瓜出身">麻瓜出身</option>
+                <option value="未知">未知</option>
+            </select>
+        </div>
+
+        <div class="edit-form-group">
+            <label>外貌</label>
+            <textarea id="char-appearance" class="cute-textarea" rows="3" placeholder="描述角色的外貌特征..."></textarea>
+        </div>
+
+        <div class="edit-form-group">
+            <label>性格</label>
+            <textarea id="char-personality" class="cute-textarea" rows="3" placeholder="描述角色的性格特点..."></textarea>
+        </div>
+
+        <div class="edit-form-group">
+            <label>家族背景</label>
+            <textarea id="char-family" class="cute-textarea" rows="3" placeholder="描述角色的家族背景..."></textarea>
+        </div>
+
+        <!-- 删除按钮区域（仅编辑模式显示） -->
+        <div class="delete-zone" id="delete-zone" style="display: none;">
+            <button class="cute-btn-danger" id="btn-delete-character">删除此角色</button>
+        </div>
+    </div>
+</div>
+
+<!-- 删除确认弹窗 -->
+<div id="delete-confirm-modal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>确认删除</h3>
+            <button class="close-btn" onclick="closeDeleteModal()">×</button>
+        </div>
+        <div class="modal-body">
+            <p>确定要删除角色「<span id="delete-char-name"></span>」吗？此操作不可恢复。</p>
+        </div>
+        <div class="modal-footer" style="display: flex; gap: 10px;">
+            <button class="cute-btn-small" style="flex: 1;" onclick="closeDeleteModal()">取消</button>
+            <button class="cute-btn-danger" style="flex: 1;" id="btn-confirm-delete">确认删除</button>
+        </div>
+    </div>
+</div>
+</body>

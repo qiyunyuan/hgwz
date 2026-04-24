@@ -1,0 +1,118 @@
+/* 系统UI样式 */
+/* 标题栏 */
+.sys-app-header {
+    height: 60px;
+    background-color: #4a3b3b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    color: #f5e6d3;
+    flex-shrink: 0;
+}
+
+.sys-header-btn {
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sys-header-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* 内容背景 */
+.sys-app-content {
+    flex: 1;
+    background-color: #f7ede1;
+    overflow-y: auto;
+    position: relative;
+    width: 100%;
+    min-height: 0;
+}
+
+/* 全局通用 APP 视图状态 */
+/* 视图显示隐藏控制（配合单页应用切换） */
+.app-view {
+    display: none;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0; /* 🌟 关键：防止被长列表撑破外层容器 */
+    height: 100%;
+    overflow: hidden;
+}
+
+.app-view.active {
+    display: flex;
+}
+
+/* 全局通用内容区内边距 */
+.sys-content-padding {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 弹窗遮罩层基础样式 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+    display: none; /* 默认隐藏 !!! 关键点 */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* 确保在最上层 */
+    backdrop-filter: blur(4px); /* 背景模糊效果 */
+}
+
+/* 当添加了 .active 类时显示弹窗 */
+.modal-overlay.active {
+    display: flex;
+}
+
+/* 弹窗内容容器样式补充 */
+.modal-content {
+    background: #f4e4bc; /* 羊皮纸底色 */
+    border: 2px solid #8e735b;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+    animation: modalFadeIn 0.3s ease; /* 添加一个简单的淡入动画 */
+}
+
+/* 弹窗头部样式补充 */
+.modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #d4c0a0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(142, 115, 91, 0.05);
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #4a3b3b;
+    font-size: 18px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #8e735b;
+    cursor: pointer;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,44 @@
+<body>
+<div class="scene-container">
+    <!-- 顶部：返回键和状态栏 -->
+    <div class="sys-app-header">
+        <div class="sys-header-btn" id="btn-back-chapter">
+            <i class="lni lni-chevron-left"></i>
+        </div>
+        <div class="sys-header-title">
+            <span id="time-status">1991年7月</span> | 
+            <span id="location-status">家中</span>
+        </div>
+        <!-- 右侧占位，保持中间状态栏居中，或者放其他小图标 -->
+        <div class="sys-header-btn"></div>
+    </div>
+    
+    <!-- 剧情内容区（自适应剩余空间） -->
+    <div class="scene-content" id="story-container">
+        <!-- AI 生成的剧情文本 -->
+    </div>
+    
+    <!-- 行动按键区（在操作栏上面） -->
+    <div class="scene-actions" id="action-container">
+        <button class="action-btn" id="btn-read-letter" style="display: none;">查看霍格沃兹来信</button>
+        <button class="action-btn" id="btn-next-story" style="display: none;">继续</button>
+    </div>
+
+    <!-- 底部系统操作栏 -->
+    <div class="system-footer">
+        <button class="footer-btn" id="btn-settings">
+            <i class="lni lni-cog"></i>
+            <span>设置</span>
+        </button>
+        <button class="footer-btn" id="btn-attributes">
+            <i class="lni lni-user"></i>
+            <span>属性</span>
+        </button>
+        <button class="footer-btn" id="btn-inventory" style="display: none;">
+        <i class="lni lni-package"></i>
+        <span>背包</span>
+        </button>
+        <!-- 后续可以在这里继续添加按钮，如：背包、地图 -->
+    </div>
+</div>
+</body>

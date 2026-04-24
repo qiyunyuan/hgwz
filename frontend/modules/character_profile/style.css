@@ -1,0 +1,310 @@
+/* 角色档案模块样式 */
+
+/* 角色列表容器 */
+.character-list {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 空状态提示 */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #a08c7a;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* 角色卡片 */
+.character-card {
+    background: #fff9f0;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e8dccc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #c4a86a;
+}
+
+/* 卡片头部 */
+.character-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    border-bottom: 1px dashed #e8dccc;
+    padding-bottom: 8px;
+}
+
+.character-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3d2b1a;
+}
+
+.character-gender {
+    font-size: 0.8rem;
+    color: #8b7355;
+    background: #f0e6d2;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+/* 卡片信息行 */
+.character-info-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: #6b5a4a;
+}
+
+.character-info-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.character-info-item svg {
+    width: 14px;
+    height: 14px;
+    stroke: #a08c7a;
+}
+
+.character-bloodline {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #e8ddd0;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    color: #5a4a3a;
+}
+
+/* 卡片预览文本 */
+.character-preview {
+    font-size: 0.8rem;
+    color: #8b7355;
+    line-height: 1.4;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #f0e6d2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 编辑表单滚动区 */
+.edit-form-scroll {
+    overflow-y: auto;
+    padding-bottom: 30px;
+}
+
+/* 表单分组 */
+.edit-form-group {
+    margin-bottom: 20px;
+}
+
+.edit-form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #3d2b1a;
+    margin-bottom: 6px;
+}
+
+.required {
+    color: #c44;
+}
+
+/* 双列布局 */
+.edit-form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.edit-form-group.half {
+    flex: 1;
+}
+
+/* 输入框样式 */
+.cute-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e0d4c0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    background: #fff;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+.cute-input:focus {
+    outline: none;
+    border-color: #b8956e;
+    box-shadow: 0 0 0 2px rgba(184, 149, 110, 0.2);
+}
+
+/* 文本域样式 */
+.cute-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e0d4c0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    background: #fff;
+    resize: vertical;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+.cute-textarea:focus {
+    outline: none;
+    border-color: #b8956e;
+    box-shadow: 0 0 0 2px rgba(184, 149, 110, 0.2);
+}
+
+/* select 样式 */
+select.cute-input {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b5a4a' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+/* 删除区域 */
+.delete-zone {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e8dccc;
+}
+
+.cute-btn-danger {
+    width: 100%;
+    padding: 12px;
+    background: #c44;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cute-btn-danger:hover {
+    background: #a33;
+}
+
+/* 弹窗样式 */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff9f0;
+    border-radius: 16px;
+    width: 280px;
+    max-width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 18px;
+    border-bottom: 1px solid #e8dccc;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #3d2b1a;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #a08c7a;
+    padding: 0;
+    line-height: 1;
+}
+
+.modal-body {
+    padding: 18px;
+}
+
+.modal-footer {
+    padding: 12px 18px 18px;
+}
+
+.cute-btn-small {
+    padding: 8px 16px;
+    background: #b8956e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+/* 角色卡片内的编辑/删除按钮组 */
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    justify-content: flex-end;
+}
+
+.card-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    transition: background 0.2s;
+}
+
+.card-btn-edit {
+    color: #b8956e;
+}
+
+.card-btn-edit:hover {
+    background: #f0e6d2;
+}
+
+.card-btn-delete {
+    color: #c44;
+}
+
+.card-btn-delete:hover {
+    background: #fee;
+}
